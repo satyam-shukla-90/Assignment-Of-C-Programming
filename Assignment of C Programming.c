@@ -1,10 +1,10 @@
 /*
 C Language Assignment
-1. What do you mean by Arrays? Give one example of array and how you can declare an array.
-2. What do you mean by Functions? Write the types of functions and give one example in code of each type.
-3. What do you mean by Pointers? Write a code how you can initialise the pointer.
-4. What are the types of Arrays? Write in code (1D & 2D included).
-5. Explain the types of Operators in code.
+1. What do you mean by Arrays? Give one example of array and how you can declare an array
+2. What do you mean by Functions? Write the types of functions and give one example in code of each type
+3. What do you mean by Pointers? Write a code how you can initialise the pointer
+4. What are the types of Arrays? Write in code (1D & 2D included)
+5. Explain the types of Operators in code
 */
 
 #include <stdio.h>
@@ -13,7 +13,7 @@ C Language Assignment
 /*
 Explanation:
 An array is a collection of elements of the same data type stored in contiguous memory locations.
-It allows us to store multiple values under a single variable name.
+It allows us to store multiple values under a single variable name
 
 Example Declaration:
 int marks[5];
@@ -41,7 +41,7 @@ Types of functions in C:
 1. Function with no arguments and no return value.
 2. Function with arguments but no return value.
 3. Function with no arguments but with return value.
-4. Function with arguments and return value.
+4. Function with arguments and return value
 */
 
 void greet() { // no arguments, no return
@@ -78,7 +78,7 @@ void example_functions() {
 // 3. Pointers
 /*
 Explanation:
-A pointer is a variable that stores the memory address of another variable.
+A pointer is a variable that stores the memory address of another variable
 
 Initialization Example:
 int a = 10;
@@ -104,7 +104,7 @@ void example_pointers() {
 /*
 Explanation:
 1D Array: Stores data in a single row.
-2D Array: Stores data in rows and columns like a table.
+2D Array: Stores data in rows and columns like a table
 */
 
 void example_array_types() {
@@ -136,7 +136,7 @@ void example_array_types() {
 // 5. Operators
 /*
 Explanation:
-Operators are symbols used to perform operations on operands.
+Operators are symbols used to perform operations on operands
 Types of Operators:
 1. Arithmetic Operators (+, -, *, /, %)
 2. Relational Operators (==, !=, >, <, >=, <=)
