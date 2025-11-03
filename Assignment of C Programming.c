@@ -1,23 +1,19 @@
-/*
+
 C Language Assignment
 1. What do you mean by Arrays? Give one example of array and how you can declare an array
 2. What do you mean by Functions? Write the types of functions and give one example in code of each type
 3. What do you mean by Pointers? Write a code how you can initialise the pointer
 4. What are the types of Arrays? Write in code (1D & 2D included)
 5. Explain the types of Operators in code
-*/
 
 #include <stdio.h>
 
-// 1. Arrays
-/*
-Explanation:
+1. Arrays
 An array is a collection of elements of the same data type stored in contiguous memory locations.
 It allows us to store multiple values under a single variable name
 
 Example Declaration:
 int marks[5];
-*/
 
 void example_arrays() {
     int marks[5] = {85, 90, 78, 88, 92};
@@ -33,16 +29,14 @@ void example_arrays() {
     // marks[4] = 92
 }
 
-// 2. Functions
-/*
-Explanation:
-A function is a block of code that performs a specific task.
-Types of functions in C:
+2. Functions
+
+A function is a block of code that performs a specific task
+Types of functions in C
 1. Function with no arguments and no return value.
 2. Function with arguments but no return value.
 3. Function with no arguments but with return value.
 4. Function with arguments and return value
-*/
 
 void greet() { // no arguments, no return
     printf("Hello from function with no arguments and no return value!\n");
@@ -75,15 +69,13 @@ void example_functions() {
     // Sum (with args and return): 12
 }
 
-// 3. Pointers
-/*
-Explanation:
+3. Pointers
+
 A pointer is a variable that stores the memory address of another variable
 
 Initialization Example:
 int a = 10;
 int *ptr = &a;
-*/
 
 void example_pointers() {
     int a = 10;
@@ -100,12 +92,10 @@ void example_pointers() {
     // Value pointed by ptr: 10
 }
 
-// 4. Types of Arrays (1D and 2D)
-/*
-Explanation:
+4. Types of Arrays (1D and 2D)
+
 1D Array: Stores data in a single row.
 2D Array: Stores data in rows and columns like a table
-*/
 
 void example_array_types() {
     printf("\n4. Types of Arrays Example:\n");
@@ -133,9 +123,8 @@ void example_array_types() {
     // 4 5 6
 }
 
-// 5. Operators
-/*
-Explanation:
+5. Operators
+
 Operators are symbols used to perform operations on operands
 Types of Operators:
 1. Arithmetic Operators (+, -, *, /, %)
@@ -143,7 +132,6 @@ Types of Operators:
 3. Logical Operators (&&, ||, !)
 4. Assignment Operators (=, +=, -=, etc.)
 5. Increment/Decrement Operators (++ and --)
-*/
 
 void example_operators() {
     printf("\n5. Operators Example:\n");
