@@ -1,4 +1,3 @@
-
 C Language Assignment
 1. What do you mean by Arrays? Give one example of array and how you can declare an array
 2. What do you mean by Functions? Write the types of functions and give one example in code of each type
@@ -9,7 +8,8 @@ C Language Assignment
 #include <stdio.h>
 
 1. Arrays
-An array is a collection of elements of the same data type stored in contiguous memory locations.
+
+An array is a collection of elements of the same data type stored in contiguous memory locations
 It allows us to store multiple values under a single variable name
 
 Example Declaration:
