@@ -1,6 +1,5 @@
 /*
 C Language Assignment
-----------------------
 1. What do you mean by Arrays? Give one example of array and how you can declare an array.
 2. What do you mean by Functions? Write the types of functions and give one example in code of each type.
 3. What do you mean by Pointers? Write a code how you can initialise the pointer.
