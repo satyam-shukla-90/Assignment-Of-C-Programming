@@ -162,13 +162,3 @@ void example_operators() {
     // Assignment: a += 5 -> 15
     // Increment: b++ -> 6
 }
-
-int main() {
-    example_arrays();
-    example_functions();
-    example_pointers();
-    example_array_types();
-    example_operators();
-
-    return 0;
-}
