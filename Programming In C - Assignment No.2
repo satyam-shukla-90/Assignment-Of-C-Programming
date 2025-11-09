@@ -1,0 +1,124 @@
+Programming in C (Assignment – 2)
+
+                  Question-1
+What do you mean by Structures?
+
+Answer
+A structure in C is a user-defined data type that allows combining variables of different data types under one name
+The keyword struct is used to define a structure
+
+#include <stdio.h>
+
+struct Student {
+int roll;
+char name[20];
+float marks;
+};
+
+int main() {
+struct Student s1 = {1, "Amit", 88.5};
+
+printf("Roll: %d\n", s1.roll);
+printf("Name: %s\n", s1.name);
+printf("Marks: %.2f\n", s1.marks);
+
+return 0;
+}
+
+                     Output
+
+Roll: 1
+Name: Amit
+Marks: 88.50
+
+                 Question-2
+What do you mean by Array and Pointer Array?
+
+Answer
+Array - An array is a collection of similar data types stored in contiguous memory locations
+Example - int arr[5];
+
+Pointer Array - A pointer array means an array of pointers, where each element stores the address of a variable
+
+#include <stdio.h>
+
+int main() {
+int a = 10, b = 20, c = 30;
+int *arr[3];
+
+arr[0] = &a;
+arr[1] = &b;
+arr[2] = &c;
+
+printf("Values: %d %d %d", *arr[0], *arr[1], *arr[2]);
+
+return 0;
+}
+
+                     Output
+
+Values: 10 20 30
+
+                 Question-3
+Compare two structure variables using comparison operators
+
+Answer
+Two structures cannot be compared directly using == or !=
+We must compare their members individually using conditional statements
+
+#include <stdio.h>
+#include <string.h>
+
+struct Student {
+int roll;
+char name[20];
+};
+
+int main() {
+ struct Student s1 = {1, "Amit"};
+ struct Student s2 = {2, "Amit"};
+
+ if (s1.roll == s2.roll && strcmp(s1.name, s2.name) == 0)
+ printf("Structures are Equal");
+ else
+ printf("Structures are Not Equal");
+
+return 0;
+}
+
+                   Output
+
+Structures are Not Equal
+
+               Question-4
+Perform arithmetic operations on structures
+
+Answer
+Arithmetic operations cannot be performed directly on entire structure variables,
+but they can be performed on individual numeric members of the structure
+
+#include <stdio.h>
+
+struct Numbers {
+int a;
+int b;
+};
+
+int main() {
+struct Numbers n1 = {10, 20};
+struct Numbers n2 = {5, 15};
+struct Numbers result;
+
+result.a = n1.a + n2.a;
+result.b = n1.b - n2.b;
+
+printf("Addition of a = %d\n", result.a);
+printf("Subtraction of b = %d\n", result.b);
+
+return 0;
+}
+
+                    Output
+
+Addition of a = 15
+Subtraction of b = 5
