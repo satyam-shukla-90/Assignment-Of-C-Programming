@@ -1,0 +1,210 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_BOOKS 100
+
+struct Book {
+    int id;
+    char title[100];
+    char author[100];
+    int available;
+};
+
+struct Book library[MAX_BOOKS];
+int count = 0;
+
+void addBook();
+void displayBooks();
+void searchBook();
+void issueBook();
+void returnBook();
+
+int main() {
+    int choice;
+
+    printf("\n===== Library Management System =====\n");
+
+    while (1) {
+        printf("\n1. Add Book");
+        printf("\n2. Display All Books");
+        printf("\n3. Search Book");
+        printf("\n4. Issue Book");
+        printf("\n5. Return Book");
+        printf("\n6. Exit");
+
+        printf("\n\nEnter your choice: ");
+        scanf("%d", &choice);
+        getchar();
+
+        switch (choice) {
+            case 1: addBook(); break;
+            case 2: displayBooks(); break;
+            case 3: searchBook(); break;
+            case 4: issueBook(); break;
+            case 5: returnBook(); break;
+            case 6: return 0;
+            default: printf("\nInvalid choice!\n");
+        }
+    }
+}
+
+void addBook() {
+    struct Book b;
+    b.id = count + 1;
+
+    printf("Enter Book Title: ");
+    fgets(b.title, 100, stdin);
+    b.title[strcspn(b.title, "\n")] = '\0';
+
+    printf("Enter Author Name: ");
+    fgets(b.author, 100, stdin);
+    b.author[strcspn(b.author, "\n")] = '\0';
+
+    b.available = 1;
+
+    library[count] = b;
+    count++;
+
+    printf("Book added successfully!\n");
+}
+
+void displayBooks() {
+    printf("ID    Title                     Author                Status\n");
+    printf("---------------------------------------------------------------\n");
+
+    for (int i = 0; i < count; i++) {
+        printf("%-5d %-25s %-20s %s\n",
+               library[i].id,
+               library[i].title,
+               library[i].author,
+               library[i].available ? "Available" : "Issued");
+    }
+}
+
+void searchBook() {
+    char name[100];
+    printf("Enter Book Title to search: ");
+    fgets(name, 100, stdin);
+    name[strcspn(name, "\n")] = '\0';
+
+    for (int i = 0; i < count; i++) {
+        if (strcmp(name, library[i].title) == 0) {
+            printf("Book Found!\n");
+            printf("ID: %d\nTitle: %s\nAuthor: %s\nStatus: %s\n",
+                   library[i].id,
+                   library[i].title,
+                   library[i].author,
+                   library[i].available ? "Available" : "Issued");
+            return;
+        }
+    }
+    printf("Book not found!\n");
+}
+
+void issueBook() {
+    int id;
+    printf("Enter Book ID to issue: ");
+    scanf("%d", &id);
+
+    if (library[id - 1].available == 1) {
+        library[id - 1].available = 0;
+        printf("Book issued successfully!\n");
+    } else {
+        printf("Book already issued!\n");
+    }
+}
+
+void returnBook() {
+    int id;
+    printf("Enter Book ID to return: ");
+    scanf("%d", &id);
+
+    if (library[id - 1].available == 0) {
+        library[id - 1].available = 1;
+        printf("Book returned successfully!\n");
+    } else {
+        printf("This book was not issued!\n");
+    }
+}
+
+                  Output
+
+===== Library Management System =====
+
+1. Add Book
+2. Display All Books
+3. Search Book
+4. Issue Book
+5. Return Book
+6. Exit
+
+Enter your choice: 1
+
+Enter Book Title: C Programming
+Enter Author Name: Dennis Ritchie
+
+Book added successfully!
+
+
+Enter your choice: 1
+
+Enter Book Title: Data Structures
+Enter Author Name: Mark Weiss
+
+Book added successfully!
+
+
+Enter your choice: 2
+
+ID    Title                     Author                Status
+---------------------------------------------------------------
+1     C Programming             Dennis Ritchie        Available
+2     Data Structures           Mark Weiss            Available
+
+
+
+Enter your choice: 3
+Enter Book Title to search: C Programming
+
+Book Found!
+ID: 1
+Title: C Programming
+Author: Dennis Ritchie
+Status: Available
+
+
+
+Enter your choice: 4
+Enter Book ID to issue: 1
+
+Book issued successfully!
+
+
+
+Enter your choice: 2
+
+ID    Title                     Author                Status
+---------------------------------------------------------------
+1     C Programming             Dennis Ritchie        Issued
+2     Data Structures           Mark Weiss            Available
+
+
+
+Enter your choice: 5
+Enter Book ID to return: 1
+
+Book returned successfully!
+
+
+
+Enter your choice: 2
+
+ID    Title                     Author                Status
+---------------------------------------------------------------
+1     C Programming             Dennis Ritchie        Available
+2     Data Structures           Mark Weiss            Available
+
+
+Enter your choice: 6
+
+Thank you for using the Library Management System!
